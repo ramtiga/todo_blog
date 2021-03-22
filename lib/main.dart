@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:todo_blog/utils.dart';
 
 final todoProvider = ChangeNotifierProvider((ref) => Todo());
 
@@ -68,6 +69,7 @@ class MyHomePage extends HookWidget {
                     icon: Icons.delete,
                     onTap: () {
                       todo.deleteTodo(index);
+                      Utils.showSnackBar(context, 'Deleted the task');
                     },
                   ),
                 ],
